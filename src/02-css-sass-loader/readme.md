@@ -1,0 +1,3 @@
+- https://stackoverflow.com/questions/34039826/webpack-style-loader-vs-css-loader
+- https://github.com/webpack-contrib/css-loader
+- https://github.com/webpack-contrib/style-loader

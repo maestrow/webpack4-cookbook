@@ -1,0 +1,10 @@
+.container {
+  padding: 5px;
+  border: 1px black solid;
+}
+
+.block {
+  margin: 5px;
+  padding: 5px;
+  border: 1px blue solid;
+}
