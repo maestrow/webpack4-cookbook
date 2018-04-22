@@ -1,13 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import Main from './main.jsx'
+import { hot } from 'react-hot-loader'
+import Counter from './Counter'
 
-let cities = [
-  ['aa', 1],
-  ['bb', 2],
-  ['cc', 3],
-]
+const App = () => (
+  <h1>
+    Hello, world.<br />
+    <Counter />
+  </h1>
+)
 
-window.onload = () => {
-  ReactDOM.render(<Main name="World" cities={cities}/>, document.getElementById('app'))
-}
+export default hot(module)(App)
