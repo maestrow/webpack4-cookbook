@@ -1,5 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { App } from './app';
+import { Greeter } from './greeter/greeter';
 
-ReactDOM.render(<App message="hi" />, document.getElementById('app'));
+ReactDOM.render(<Greeter name="Joe" />, document.getElementById('app'));
