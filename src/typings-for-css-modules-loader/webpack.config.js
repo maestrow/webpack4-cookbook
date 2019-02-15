@@ -29,7 +29,7 @@ module.exports = {
               namedExport: true,
               camelCase: true,
               sourceMap: true,
-              localIdentName: "[name]_[local][hash:base64:5]",
+              localIdentName: "[name]__[local]", // "[name]__[local]__[hash:base64:5]"
               banner: "// *** Generated File - Do not Edit ***"
             }
           }
