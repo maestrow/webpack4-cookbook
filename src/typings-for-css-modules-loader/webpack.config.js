@@ -1,6 +1,8 @@
 const path = require("path");
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -18,9 +20,10 @@ module.exports = {
         loader: "ts-loader"
       },
       {
-        test: /\.css$/,
+        test: /\.pcss$/,
         use: [
-          "style-loader",
+          // "style-loader",
+          MiniCssExtractPlugin.loader,
           {
             loader: "typings-for-css-modules-loader",
             options: {
@@ -32,7 +35,8 @@ module.exports = {
               localIdentName: "[name]__[local]", // "[name]__[local]__[hash:base64:5]"
               banner: "// *** Generated File - Do not Edit ***"
             }
-          }
+          },
+          'postcss-loader'
         ]
       }
     ]
@@ -43,6 +47,10 @@ module.exports = {
     }),
     new webpack.WatchIgnorePlugin([
       /\.css\.d\.ts$/
-    ])
+    ]),
+    new MiniCssExtractPlugin({
+      filename: 'style.[contenthash].css',
+    }),
+    new CleanWebpackPlugin(['dist'])
   ]
 };

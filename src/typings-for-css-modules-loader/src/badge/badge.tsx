@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as s from './badge.css';
+import * as s from './badge.pcss';
 
 export enum RatingEnum {
     Poor,
